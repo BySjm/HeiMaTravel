@@ -6,40 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b68dcac3-0e84-43c0-a00b-283173786710" name="Default Changelist" comment="ReadMe">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/damain/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/domain/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/damain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/domain/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/damain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/domain/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/damain/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/domain/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/damain/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/domain/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/damain/RouteImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/domain/RouteImg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/damain/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/domain/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/damain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/plugins/jquery.jqzoom/jquery.jqzoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/plugins/jquery.jqzoom/jquery.jqzoom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/damain/Address.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/damain/Category.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/damain/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/damain/OrderItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/damain/Route.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/damain/RouteImg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/damain/Seller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/damain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/damain/Address.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/damain/Category.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/damain/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/damain/OrderItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/damain/Route.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/damain/RouteImg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/damain/Seller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/damain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/js/plugins/jquery.jqzoom/jquery.jqzoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/js/plugins/jquery.jqzoom/jquery.jqzoom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/register.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="b68dcac3-0e84-43c0-a00b-283173786710" name="Default Changelist" comment="注册" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,6 +201,7 @@
       <workItem from="1572169476913" duration="4007000" />
       <workItem from="1572174068306" duration="185000" />
       <workItem from="1572174274546" duration="6152000" />
+      <workItem from="1572187065032" duration="251000" />
     </task>
     <task id="LOCAL-00001" summary="heima travel web project">
       <created>1572017505211</created>
@@ -249,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572017776860</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="注册">
+      <created>1572187234153</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572187234153</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +233,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="heima travel web project" />
     <MESSAGE value="ReadMe" />
-    <option name="LAST_COMMIT_MESSAGE" value="ReadMe" />
+    <MESSAGE value="注册" />
+    <option name="LAST_COMMIT_MESSAGE" value="注册" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Inspections" timestamp="1572175558659">
