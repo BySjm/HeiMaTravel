@@ -1,6 +1,6 @@
 //**************************************************************
 // jQZoom allows you to realize a small magnifier window,close
-// to the image or images on your web page easily.
+// to the image or images on your servlet page easily.
 //
 // jqZoom version 2.1
 // Author Doc. Ing. Renzi Marco(www.mind-projects.it)

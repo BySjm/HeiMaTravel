@@ -18,7 +18,7 @@
         </div>
         <div class="rg_form_center">
             <!--注册表单-->
-            <form id="registerForm" action="register_ok.jsp" method="post">
+            <form id="registerForm" action="${pageContext.request.contextPath}/user" method="post">
                 <!--提交处理请求的标识符-->
                 <input type="hidden" name="action" value="register">
                 <table style="margin-top: 25px;width: 558px">
@@ -28,7 +28,7 @@
                         </td>
                         <td class="td_right">
                             <input type="text" id="username" name="username" placeholder="请输入账号">
-							<span id="userInfo" style="font-size:10px"></span>
+							<span id="userInfo" style="font-size:10px">${message}</span>
                         </td>
                     </tr>
                     <tr>

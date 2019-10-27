@@ -89,8 +89,9 @@
             <artifactId>commons-io</artifactId>
             <version>1.4</version>
         </dependency>
+<!--        4.4 创建项目包目录结构-->
         <dependency>
-            <groupId>taglibs</groupId>4.4 创建项目包目录结构
+            <groupId>taglibs</groupId>
             <artifactId>standard</artifactId>
             <version>1.1.2</version>
         </dependency>

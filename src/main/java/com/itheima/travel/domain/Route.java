@@ -1,4 +1,4 @@
-package com.itheima.travel.damain;
+package com.itheima.travel.domain;
 
 import lombok.Data;
 
