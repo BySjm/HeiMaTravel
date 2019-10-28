@@ -54,15 +54,43 @@
                         </td>
                         <td class="td_right check">
                             <input type="text" id="smsCode" name="smsCode" class="check" placeholder="请输入验证码">
-                            <a href="javaScript:void(0)" id="sendSmsCode">发送手机验证码</a>
+                            <input type="button" id="sendSmsCode" value="发送手机验证码" class="btn btn-link"/>
                         </td>
+                        <script>
+                            $('#sendSmsCode').click(function () {
+                                let telephone = $('#telephone').val();
+                                let url = '${pageContext.request.contextPath}/user';
+                                let data = 'action=sendSms&telephone=' + telephone;
+                                $.post(url,data,function (resp) {
+                                    //提示一下
+                                    alert("发送成功");
+                                });
+                                countDown(this);
+                            });
+                            //60秒倒计时
+                            let num = 60;
+                            function countDown(obj) {
+                                if (num == 0){
+                                    $(obj).prop("disabled",false);
+                                    $(obj).val('重新发送');
+                                    num = 60;
+                                }else {
+                                    num --;
+                                    $(obj).prop("disabled",true);// 按钮不可用
+                                    $(obj).val(`(\${num})秒后，重新发送`);
+                                    setTimeout(function () {
+                                        countDown(obj);
+                                    },1000)
+                                }
+                            }
+                        </script>
                     </tr>
                     <tr>
                         <td class="td_left">
                         </td>
                         <td class="td_right check">
                             <input type="submit" class="submit" value="注册">
-                            <span id="msg" style="color: red;"></span>
+                            <span id="msg" style="color: red;">${resultInfo.message}</span>
                         </td>
                     </tr>
                 </table>
@@ -105,15 +133,7 @@
             }
         })
     });
-    $('#sendSmsCode').click(function () {
-        let telephone = $('#telephone').val();
-        let url = '${pageContext.request.contextPath}/user';
-        let data = 'action=sendSms&telephone=' + telephone;
-        $.post(url,data,function (resp) {
-            //提示一下
-            alert("发送成功");
-        })
-    })
+
 </script>
 </body>
 </html>

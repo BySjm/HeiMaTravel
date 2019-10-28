@@ -61,7 +61,7 @@ public class UserService {
         String code = "{\"code\":\"" + codeSms + "\"}";
         try {
             // 4.调用工具类发送短信
-            SmsUtils.sendSms(telephone, signName, templateCode, code);
+            //SmsUtils.sendSms(telephone, signName, templateCode, code);
             System.out.println("短信验证码：" + codeSms);
             // 5.返回结果
             return new ResultInfo(true, "短信发送成功");

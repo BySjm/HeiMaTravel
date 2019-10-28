@@ -21,6 +21,13 @@ public class UserServlet extends BaseServlet {
     UserService service = new UserService();
 
     protected void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String smsCode = request.getParameter("smsCode");
+        String smsCodeServer = (String) request.getSession().getAttribute("smsCodeServer");
+        if (smsCodeServer == null || !smsCodeServer.equals(smsCode)){
+            request.setAttribute("resultInfo",new ResultInfo(false,"验证码不正确"));
+            request.getRequestDispatcher("/register.jsp").forward(request,response);
+            return;
+        }
         Map<String, String[]> parameterMap = request.getParameterMap();
         User user = new User();
         try {
@@ -30,6 +37,8 @@ public class UserServlet extends BaseServlet {
                 request.setAttribute("resultInfo",resultInfo);
                 request.getRequestDispatcher("/register.jsp").forward(request,response);
             }else {
+                //清除session中存入的验证码信息
+                request.getSession().removeAttribute("smsCodeServer");
                 response.sendRedirect(request.getContextPath()+"/register_ok.jsp");
             }
         } catch (Exception e) {
@@ -56,13 +65,13 @@ public class UserServlet extends BaseServlet {
         response.setContentType("application/json;charset=utf-8");
         response.getWriter().write(json);
     }
-
+    //发送短信验证码
     protected void sendSms(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String telephone = request.getParameter("telephone");
-        String smsCode = RandomStringUtils.randomNumeric(6);
-        ResultInfo resultInfo = service.sendSms(telephone,smsCode);
+        String smsCodeServer = RandomStringUtils.randomNumeric(6);
+        ResultInfo resultInfo = service.sendSms(telephone,smsCodeServer);
         if (resultInfo.getSuccess()) {// 成功
-            request.getSession().setAttribute("smsCode", smsCode);
+            request.getSession().setAttribute("smsCodeServer",smsCodeServer);
         }
         // 5.将resultInfo转为json
         ObjectMapper objectMapper = new ObjectMapper();
@@ -72,7 +81,7 @@ public class UserServlet extends BaseServlet {
         response.getWriter().write(json);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void template(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }
