@@ -6,7 +6,18 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b68dcac3-0e84-43c0-a00b-283173786710" name="Default Changelist" comment="注册" />
+    <list default="true" id="b68dcac3-0e84-43c0-a00b-283173786710" name="Default Changelist" comment="注册">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/register.jsp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +83,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/itheima/travel/util" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -87,16 +98,28 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA-workspace\travel\src\main\resources\com\itheima\travel\dao" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\util" />
       <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\web\servlet" />
       <recent name="D:\IDEA-workspace\travel\src\main\resources" />
       <recent name="D:\IDEA-workspace\travel\src\main\webapp" />
-      <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\util" />
       <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\damain" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA-workspace\travel\src\main\resources\com\itheima\travel\dao" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.27" ALTERNATIVE_JRE_ENABLED="false">
@@ -175,12 +198,13 @@
     </configuration>
   </component>
   <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.012303486" />
-        </serviceView>
-      </list>
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -201,7 +225,9 @@
       <workItem from="1572169476913" duration="4007000" />
       <workItem from="1572174068306" duration="185000" />
       <workItem from="1572174274546" duration="6152000" />
-      <workItem from="1572187065032" duration="251000" />
+      <workItem from="1572187065032" duration="4019000" />
+      <workItem from="1572227255088" duration="2065000" />
+      <workItem from="1572244574255" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="heima travel web project">
       <created>1572017505211</created>
@@ -224,11 +250,31 @@
       <option name="project" value="LOCAL" />
       <updated>1572187234153</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="注册">
+      <created>1572187336765</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572187336765</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="heima travel web project" />
@@ -249,82 +295,93 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="139" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1572174103353" />
-    <state width="1493" height="391" key="GridCell.Tab.0.bottom" timestamp="1572181437570">
+    <state width="1389" height="107" key="GridCell.Tab.0.bottom" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="391" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1572181437570" />
-    <state width="1493" height="391" key="GridCell.Tab.0.center" timestamp="1572181437569">
+    <state width="1389" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.0.center" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="391" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1572181437569" />
-    <state width="1493" height="391" key="GridCell.Tab.0.left" timestamp="1572181437569">
+    <state width="1389" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.0.left" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="391" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1572181437569" />
-    <state width="1493" height="391" key="GridCell.Tab.0.right" timestamp="1572181437570">
+    <state width="1389" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.0.right" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="391" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1572181437570" />
-    <state width="1445" height="490" key="GridCell.Tab.1.bottom" timestamp="1572181437564">
+    <state width="1389" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.1.bottom" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1572181437564" />
-    <state width="1445" height="490" key="GridCell.Tab.1.center" timestamp="1572181437564">
+    <state width="1389" height="107" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.1.center" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1572181437564" />
-    <state width="1445" height="490" key="GridCell.Tab.1.left" timestamp="1572181437564">
+    <state width="1389" height="107" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.1.left" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1572181437564" />
-    <state width="1445" height="490" key="GridCell.Tab.1.right" timestamp="1572181437564">
+    <state width="1389" height="107" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.1.right" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1572181437564" />
-    <state width="1445" height="490" key="GridCell.Tab.2.bottom" timestamp="1572181437565">
+    <state width="1389" height="107" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.2.bottom" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1572181437565" />
-    <state width="1445" height="490" key="GridCell.Tab.2.center" timestamp="1572181437565">
+    <state width="1389" height="107" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.2.center" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1572181437564" />
-    <state width="1445" height="490" key="GridCell.Tab.2.left" timestamp="1572181437564">
+    <state width="1389" height="107" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.2.left" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1572181437564" />
-    <state width="1445" height="490" key="GridCell.Tab.2.right" timestamp="1572181437565">
+    <state width="1389" height="107" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.2.right" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1572181437565" />
-    <state width="1445" height="490" key="GridCell.Tab.3.bottom" timestamp="1572181437565">
+    <state width="1389" height="107" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.3.bottom" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1572181437565" />
-    <state width="1445" height="490" key="GridCell.Tab.3.center" timestamp="1572181437565">
+    <state width="1389" height="107" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.3.center" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1572181437565" />
-    <state width="1445" height="490" key="GridCell.Tab.3.left" timestamp="1572181437565">
+    <state width="1389" height="107" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.3.left" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1572181437565" />
-    <state width="1445" height="490" key="GridCell.Tab.3.right" timestamp="1572181437565">
+    <state width="1389" height="107" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
+    <state width="1389" height="107" key="GridCell.Tab.3.right" timestamp="1572191108274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="490" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1572181437565" />
+    <state width="1389" height="107" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1572191108274" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1572176994285">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1572176994285" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1572174359462">
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1572189414898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1572174359462" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1572189414898" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1572177733208">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1572177733208" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
