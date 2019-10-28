@@ -28,7 +28,7 @@
                         </td>
                         <td class="td_right">
                             <input type="text" id="username" name="username" placeholder="请输入账号">
-							<span id="userInfo" style="font-size:10px">${message}</span>
+							<span id="userInfo" style="font-size:10px"></span>
                         </td>
                     </tr>
                     <tr>
@@ -37,6 +37,7 @@
                         </td>
                         <td class="td_right">
                             <input type="text" id="telephone" name="telephone" placeholder="请输入您的手机号">
+                            <span id="telephoneInfo" style="font-size:10px"></span>
                         </td>
                     </tr>
                     <tr>
@@ -79,6 +80,40 @@
 <!--引入尾部-->
 <jsp:include page="footer.jsp"></jsp:include>
 
-
+<script>
+    $('#username').blur(function () {
+        let username = $(this).val();
+        let url = '${pageContext.request.contextPath}/user';
+        let data = 'action=findByUsername&username=' + username;
+        $.post(url,data,function (resp) {
+            if (!resp.success){
+                $('#userInfo').html(`<font color="red">\${resp.message}\</font>`);
+            }else {
+                $('#userInfo').html(`<font color="green">\${resp.message}\</font>`);
+            }
+        })
+    });
+    $('#telephone').blur(function () {
+        let telephone = $(this).val();
+        let url = '${pageContext.request.contextPath}/user';
+        let data = 'action=findByTelephone&telephone=' + telephone;
+        $.post(url,data,function (resp) {
+            if (!resp.success){
+                $('#telephoneInfo').html(`<font color="red">\${resp.message}\</font>`);
+            }else {
+                $('#telephoneInfo').html(`<font color="green">\${resp.message}\</font>`);
+            }
+        })
+    });
+    $('#sendSmsCode').click(function () {
+        let telephone = $('#telephone').val();
+        let url = '${pageContext.request.contextPath}/user';
+        let data = 'action=sendSms&telephone=' + telephone;
+        $.post(url,data,function (resp) {
+            //提示一下
+            alert("发送成功");
+        })
+    })
+</script>
 </body>
 </html>
