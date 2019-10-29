@@ -9,7 +9,7 @@ import com.itheima.travel.util.SmsUtils;
 import org.apache.ibatis.session.SqlSession;
 
 public class UserService {
-
+    //注册
     public ResultInfo register(User user) {
         SqlSession sqlSession = MyBatisUtils.openSession();
         UserDao dao = sqlSession.getMapper(UserDao.class);
@@ -30,7 +30,7 @@ public class UserService {
         MyBatisUtils.close(sqlSession);
         return new ResultInfo(true);
     }
-
+    //根据用户名查询
     public ResultInfo findByUsername(String username) {
         SqlSession sqlSession = MyBatisUtils.openSession();
         UserDao dao = sqlSession.getMapper(UserDao.class);
@@ -42,19 +42,15 @@ public class UserService {
             return new ResultInfo(true,"可以注册");
         }
     }
-
-    public ResultInfo findByTelephone(String telephone) {
+    //根据手机号查询
+    public User findByTelephone(String telephone) {
         SqlSession sqlSession = MyBatisUtils.openSession();
         UserDao dao = sqlSession.getMapper(UserDao.class);
         User user = dao.findByTelephone(telephone);
         MyBatisUtils.close(sqlSession);
-        if (user != null){
-            return new ResultInfo(false,"手机号已被注册");
-        }else {
-            return new ResultInfo(true,"可以注册");
-        }
+        return user;
     }
-
+    //发送短信
     public ResultInfo sendSms(String telephone,String codeSms) {
         String signName = "BySjm";
         String templateCode = "SMS_176521278";
@@ -69,5 +65,24 @@ public class UserService {
             e.printStackTrace();
             return new ResultInfo(false, "短信发送失败");
         }
+    }
+    //密码登录
+    public ResultInfo pwdLogin(User param) {
+        SqlSession sqlSession = MyBatisUtils.openSession();
+        UserDao dao = sqlSession.getMapper(UserDao.class);
+        User user = dao.findByUsername(param.getUsername());
+        String password = param.getPassword();
+        password = Md5Utils.encodeByMd5( password+ "acv");
+        if (user == null || !password.equals(user.getPassword())){
+            return new ResultInfo(false,"用户名或密码错误");
+        }
+        return new ResultInfo(true,"登录成功",user);
+    }
+    //根据Uid查询用户
+    public User findByUid(int uid) {
+        SqlSession sqlSession = MyBatisUtils.openSession();
+        UserDao dao = sqlSession.getMapper(UserDao.class);
+        User user = dao.findByUid(uid);
+        return user;
     }
 }

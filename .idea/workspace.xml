@@ -8,14 +8,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b68dcac3-0e84-43c0-a00b-283173786710" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itheima/travel/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itheima/travel/dao/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home_left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_left.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/UserServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/register.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -232,6 +235,7 @@
       <workItem from="1572252050486" duration="5184000" />
       <workItem from="1572262591175" duration="1557000" />
       <workItem from="1572271777397" duration="990000" />
+      <workItem from="1572313683869" duration="13206000" />
     </task>
     <task id="LOCAL-00001" summary="heima travel web project">
       <created>1572017505211</created>

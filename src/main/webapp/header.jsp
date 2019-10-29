@@ -15,18 +15,22 @@
     </div>
     <%--右侧按钮--%>
     <div class="shortcut">
-        <!-- 未登录状态 -->
-		<div class="login_out">
-			<a id="loginBtn" data-toggle="modal" data-target="#loginModel" style="cursor: pointer;">登录</a>
-			<a href="register.jsp" style="cursor: pointer;">注册</a>
-		</div>
-        <!-- 登录状态 -->
-		<div class="login">
-			<span>欢迎回来，${currentUser.username}</span>
-			<a href="home_index.jsp" class="collection">个人中心</a>
-			<a href="cart.jsp" class="collection">购物车</a>
-			<a href="index.jsp">退出</a>
-		</div>
+        <c:if test="${empty user}">
+            <!-- 未登录状态 -->
+            <div class="login_out">
+                <a id="loginBtn" data-toggle="modal" data-target="#loginModel" style="cursor: pointer;">登录</a>
+                <a href="register.jsp" style="cursor: pointer;">注册</a>
+            </div>
+        </c:if>
+        <c:if test="${not empty user}">
+            <!-- 登录状态 -->
+            <div class="login">
+                <span>欢迎回来，${user.username}</span>
+                <a href="${pageContext.request.contextPath}/user?action=userInfo" class="collection">个人中心</a>
+                <a href="cart.jsp" class="collection">购物车</a>
+                <a href="${pageContext.request.contextPath}/user?action=logout">退出</a>
+            </div>
+        </c:if>
     </div>
     <%--搜索框--%>
     <div class="header_wrap">
@@ -107,10 +111,24 @@
                             </div>
                         </div>
                         <div class="modal-footer">
+                            <span id="login_info" style="color: red"></span>
                             <input type="reset" class="btn btn-primary" value="重置">
                             <input type="button" id="pwdLogin" class="btn btn-primary" value="登录"/>
                         </div>
                     </form>
+                    <script>
+                        $('#pwdLogin').click(function () {
+                            let data = $('#pwdLoginForm').serialize();
+                            let url = '${pageContext.request.contextPath}/user';
+                            $.post(url, data, function (resp) {
+                                if (resp.success) {
+                                    location.reload();
+                                } else {
+                                    $('#login_info').text(resp.message);
+                                }
+                            })
+                        })
+                    </script>
                 </div>
                 <%--短信登录--%>
                 <div class="tab-pane fade" id="telReg">
@@ -127,13 +145,59 @@
                                 <input type="text" class="form-control" id="login_check" name="smsCode"
                                        placeholder="请输入手机验证码">
                             </div>
-                            <a href="javaScript:void(0)" id="login_sendSmsCode">发送手机验证码</a>
+<%--                            <a href="javaScript:" id="login_sendSmsCode">发送手机验证码</a>--%>
+                            <input class="btn btn-link" type="text" id="login_sendSmsCode" value="发送手机验证码">
                         </div>
                         <div class="modal-footer">
+                            <span style="color: red" id="telLoginInfo"></span>
                             <input type="reset" class="btn btn-primary" value="重置">
                             <input type="button" class="btn btn-primary" id="telLogin" value="登录"/>
                         </div>
                     </form>
+                    <script>
+                        //发短信的
+                        $('#login_sendSmsCode').click(function () {
+                            let telephone = $('#login_telephone').val();
+                            let url = '${pageContext.request.contextPath}/user';
+                            let data = 'action=sendSms&telephone='+telephone;
+                            $.post(url,data,function (resp) {
+                                if (resp.success){
+                                    alert("短信发送成功")
+                                }else {
+                                    alert("服务器繁忙...")
+                                }
+                            });
+                            countDown(this);
+                        });
+                        //60秒倒计时
+                        let num = 60;
+                        function countDown(obj) {
+                            if (num == 0){
+                                $(obj).prop('disabled',false);
+                                $(obj).val('重新发送短信');
+                                num = 60;
+                            }else {
+                                num--;
+                                $(obj).prop('disabled',true);
+                                $(obj).val(`\${num}秒后重新发送`)
+                                setTimeout(function () {
+                                    countDown(obj);
+                                },1000)
+                            }
+                        }
+                        //短信登录
+                        $('#telLogin').click(function () {
+                            let data = $('#telLoginForm').serialize();
+                            let url = '${pageContext.request.contextPath}/user';
+                            $.post(url,data,function (resp) {
+                                if (resp.success){
+                                    location.reload();
+                                }else {
+                                    $('#telLoginInfo').text(resp.message);
+                                }
+                            })
+                        });
+                    </script>
                 </div>
             </div>
         </div>

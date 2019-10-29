@@ -10,7 +10,7 @@
 
     <div class="person-info">
         <div class="person-photo" style="text-align: center">
-            <img src="${pageContext.request.contextPath}/img/girl.png" width="160px" class="img-circle" alt="">
+            <img src="${pageContext.request.contextPath}/${user.pic}" width="160px" class="img-circle" alt="">
         </div>
         <div class="clearfix"></div>
     </div>

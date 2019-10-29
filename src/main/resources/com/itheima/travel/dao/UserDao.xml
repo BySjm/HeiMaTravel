@@ -14,4 +14,8 @@
         select * from tab_user where telephone = #{telephone}
     </select>
 
+    <select id="findByUid" parameterType="int" resultType="User">
+        select * from tab_user where uid = #{uid}
+    </select>
+
 </mapper>
