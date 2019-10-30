@@ -39,26 +39,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach items="${list}" var="address" >
                                 <tr>
-                                    <td>刘田田</td>
-                                    <td>北京 北京市 海淀区 上地街道东北旺西路8号中关村软件园9号楼</td>
-                                    <td>12345678901</td>
+                                    <td>${address.contact}</td>
+                                    <td>${address.address}</td>
+                                    <td>${address.telephone}</td>
                                     <td>
                                         <a href="#">编辑</a>
                                         <a href="#">删除</a>
                                         <a href="#">设为默认</a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>沈沉</td>
-                                    <td>北京 北京市 海淀区 上地街道东北旺西路8号中关村软件园9号楼</td>
-                                    <td>12345678901</td>
-                                    <td>
-                                        <a href="#">编辑</a>
-                                        <a href="#">删除</a>
-                                        <a href="#">设为默认</a>
-                                    </td>
-                                </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -69,12 +61,12 @@
                                 <div class="modal-content">
                                     <%--密码登录--%>
                                     <div class="tab-pane fade in active" id="pwdReg">
-                                        <form id="xxxx" action="#" method="post">
-                                            <input type="hidden" name="action" value="xxx">
+                                        <form id="xxxx" action="${pageContext.request.contextPath}/address" method="post">
+                                            <input type="hidden" name="action" value="save">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label>姓名</label>
-                                                    <input type="text" class="form-control" name="name"
+                                                    <input type="text" class="form-control" name="contact"
                                                            placeholder="姓名">
                                                 </div>
                                                 <div class="form-group">
@@ -90,7 +82,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <input type="button" class="btn btn-default" data-dismiss="modal"  value="关闭">
-                                                <input type="button" class="btn btn-primary" value="保存"/>
+                                                <input type="submit" class="btn btn-primary" value="保存"/>
                                             </div>
                                         </form>
                                     </div>

@@ -3,24 +3,27 @@ package com.itheima.travel.web.servlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itheima.travel.domain.ResultInfo;
 import com.itheima.travel.domain.User;
+import com.itheima.travel.factory.BeanFactory;
 import com.itheima.travel.service.UserService;
+import com.itheima.travel.service.impl.UserServiceImpl;
+import com.itheima.travel.util.UuidUtils;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 @WebServlet("/user")
+@MultipartConfig
 public class UserServlet extends BaseServlet {
 
-    UserService service = new UserService();
+    UserService service = (UserService)BeanFactory.getBean("UserService");
 
     protected void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String smsCode = request.getParameter("smsCode");
@@ -99,7 +102,7 @@ public class UserServlet extends BaseServlet {
             BeanUtils.populate(user, parameterMap);
             resultInfo = service.pwdLogin(user);
             if (resultInfo.getSuccess()) {
-                request.getSession().setAttribute("user", user);
+                request.getSession().setAttribute("user", resultInfo.getData());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -143,10 +146,36 @@ public class UserServlet extends BaseServlet {
 
     //个人中心用户信息数据回显
     protected void userInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = (User)request.getSession().getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
         user = service.findByUid(user.getUid());
-        request.getSession().setAttribute("user",user);
-        request.getRequestDispatcher("/home_index.jsp").forward(request,response);
+        request.getSession().setAttribute("user", user);
+        request.getRequestDispatcher("/home_index.jsp").forward(request, response);
+    }
+
+    //更新个人信息
+    protected void updateInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            Map<String, String[]> parameterMap = request.getParameterMap();
+            User user = new User();
+            BeanUtils.populate(user, parameterMap);
+            Part pic = request.getPart("pic");
+            String fileName = pic.getSubmittedFileName();
+            if (fileName.length() > 0) {
+                // 2.2 指定文件存放路径
+                String filePath = "/pic/" + UuidUtils.getUuid() + fileName;
+                // 2.3 获取文件在服务的真实路径
+                String realPath = request.getServletContext().getRealPath(filePath);
+                // 2.4 io流复制
+                pic.write(realPath);
+                // 2.5 将文件路径保存到数据库
+                user.setPic(filePath);
+            }
+            service.updateInfo(user);
+            response.sendRedirect(request.getContextPath() + "/user?action=userInfo");
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("服务器异常...");
+        }
     }
 
     //模板

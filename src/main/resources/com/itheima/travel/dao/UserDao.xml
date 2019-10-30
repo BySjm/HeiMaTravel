@@ -18,4 +18,25 @@
         select * from tab_user where uid = #{uid}
     </select>
 
+    <update id="updateInfo" parameterType="User">
+        update tab_user
+        <set>
+            <if test="nickname != null and nickname != ''">
+                nickname = #{nickname},
+            </if>
+            <if test="sex != null and sex != ''">
+                sex = #{sex},
+            </if>
+            <if test="birthday != null and birthday != ''">
+                birthday = #{birthday},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="pic != null and pic != ''">
+                pic = #{pic},
+            </if>
+        </set>
+        where uid = #{uid}
+    </update>
 </mapper>

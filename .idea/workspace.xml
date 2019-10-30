@@ -9,16 +9,24 @@
     <list default="true" id="b68dcac3-0e84-43c0-a00b-283173786710" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/itheima/travel/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itheima/travel/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_address.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home_left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/dao/UserDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/dao/UserDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/home_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/home_address.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/home_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/home_index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/home_left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/home_left.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,14 +40,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>lob</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +90,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/itheima/travel/util" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/filter" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -101,15 +105,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA-workspace\travel\src\main\resources\com\itheima\travel\dao" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.itheima.travel.service.impl" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\web\filter" />
       <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\util" />
       <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\web\servlet" />
       <recent name="D:\IDEA-workspace\travel\src\main\resources" />
       <recent name="D:\IDEA-workspace\travel\src\main\webapp" />
-      <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\damain" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA-workspace\travel\src\main\resources\com\itheima\travel\dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -124,7 +131,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BeanFactory">
+    <configuration name="BeanFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima.travel.factory.BeanFactory" />
+      <module name="travel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.travel.factory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.27" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="update-resources" />
@@ -199,6 +219,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BeanFactory" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -235,7 +260,7 @@
       <workItem from="1572252050486" duration="5184000" />
       <workItem from="1572262591175" duration="1557000" />
       <workItem from="1572271777397" duration="990000" />
-      <workItem from="1572313683869" duration="13206000" />
+      <workItem from="1572313683869" duration="25243000" />
     </task>
     <task id="LOCAL-00001" summary="heima travel web project">
       <created>1572017505211</created>
@@ -286,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572251639934</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="黑马旅游网">
+      <created>1572336113402</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572336113403</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

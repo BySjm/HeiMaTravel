@@ -28,7 +28,9 @@
                             <li class="active"><a href="#one" data-toggle="tab">基本资料</a></li>
                             <li><a href="#two" data-toggle="tab">头像照片</a></li>
                         </ul>
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="${pageContext.request.contextPath}/user" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="action" value="updateInfo">
+                            <input type="hidden" name="uid" value="${user.uid}">
                             <div class="tab-content ">
                                 <div id="one" class="tab-pane active">
                                     <div class="sui-form form-horizontal">
@@ -73,11 +75,10 @@
                                         <p>当前头像：</p>
                                         <div class="upload">
                                             <img id="imgShow_WU_FILE_0" width="100" height="100"
-                                                 src="${pageContext.request.contextPath}/${user.pic}"
+                                                 src="img/_/photo_icon.png"
                                                  alt="">
                                             <input type="file" id="up_img_WU_FILE_0" name="pic"/>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

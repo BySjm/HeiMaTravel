@@ -10,5 +10,7 @@ public interface UserDao {
 
     User findByTelephone(String telephone);
 
-    User findByUid(int uid);
+    User findByUid(Integer uid);
+
+    void updateInfo(User user);
 }

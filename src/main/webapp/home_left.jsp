@@ -17,8 +17,8 @@
     <div class="list-items">
         <dl>
             <dt><i>·</i> 设置</dt>
-            <dd><a href="home_index.jsp">个人信息</a></dd>
-            <dd><a href="home_address.jsp">地址管理</a></dd>
+            <dd><a href="${pageContext.request.contextPath}/user?action=userInfo">个人信息</a></dd>
+            <dd><a href="${pageContext.request.contextPath}/address?action=findAll">地址管理</a></dd>
         </dl>
         <dl>
             <dt><i>·</i> 订单中心</dt>
