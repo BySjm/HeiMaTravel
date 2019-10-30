@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.travel.dao.AddressDao">
+    <select id="findByUid" parameterType="User" resultType="Address">
+        select * from tab_address where uid = #{uid}
+    </select>
+
+    <insert id="save" parameterType="Address">
+        insert into `tab_address` (uid,contact,address,telephone) values(#{user.uid},#{contact},#{address},#{telephone})
+    </insert>
+
+</mapper>
