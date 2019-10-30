@@ -6,22 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b68dcac3-0e84-43c0-a00b-283173786710" name="Default Changelist" comment="">
+    <list default="true" id="b68dcac3-0e84-43c0-a00b-283173786710" name="Default Changelist" comment="黑马旅游网">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/BaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/BaseServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/travel/web/servlet/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itheima/travel/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itheima/travel/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_address.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home_left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/dao/UserDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/BaseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/BaseServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/travel/web/servlet/UserServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/dao/UserDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/BaseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/BaseServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/travel/web/servlet/UserServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/home_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/travel-1.0-SNAPSHOT/home_address.jsp" afterDir="false" />
@@ -105,9 +104,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA-workspace\travel\src\main\resources\com\itheima\travel\dao" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.itheima.travel.service.impl" />
     </key>
@@ -117,6 +113,9 @@
       <recent name="D:\IDEA-workspace\travel\src\main\java\com\itheima\travel\web\servlet" />
       <recent name="D:\IDEA-workspace\travel\src\main\resources" />
       <recent name="D:\IDEA-workspace\travel\src\main\webapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA-workspace\travel\src\main\resources\com\itheima\travel\dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -131,16 +130,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BeanFactory">
-    <configuration name="BeanFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima.travel.factory.BeanFactory" />
+  <component name="RunManager" selected="JUnit.JedisTest.testJedisPoolUtil">
+    <configuration name="JedisTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima.travel.factory.*" />
+          <option name="PATTERN" value="com.itheima.travel.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.travel.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.travel.test.JedisTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JedisTest.testJedis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="travel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.travel.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.travel.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.travel.test.JedisTest" />
+      <option name="METHOD_NAME" value="testJedis" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JedisTest.testJedisPoolUtil" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="travel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.travel.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.travel.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.travel.test.JedisTest" />
+      <option name="METHOD_NAME" value="testJedisPoolUtil" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -219,9 +253,17 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat" />
+      <item itemvalue="JUnit.JedisTest.testJedis" />
+      <item itemvalue="JUnit.JedisTest.test" />
+      <item itemvalue="JUnit.JedisTest.testJedisPoolUtil" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BeanFactory" />
+        <item itemvalue="JUnit.JedisTest.testJedisPoolUtil" />
+        <item itemvalue="JUnit.JedisTest.test" />
+        <item itemvalue="JUnit.JedisTest.testJedis" />
       </list>
     </recent_temporary>
   </component>
@@ -261,6 +303,7 @@
       <workItem from="1572262591175" duration="1557000" />
       <workItem from="1572271777397" duration="990000" />
       <workItem from="1572313683869" duration="25243000" />
+      <workItem from="1572396433563" duration="7701000" />
     </task>
     <task id="LOCAL-00001" summary="heima travel web project">
       <created>1572017505211</created>
@@ -318,7 +361,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572336113403</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="黑马旅游网">
+      <created>1572396484067</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572396484067</updated>
+    </task>
+    <task id="LOCAL-00010" summary="黑马旅游网">
+      <created>1572423052191</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572423052191</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

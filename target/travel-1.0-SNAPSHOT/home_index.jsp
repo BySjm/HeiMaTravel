@@ -28,35 +28,37 @@
                             <li class="active"><a href="#one" data-toggle="tab">基本资料</a></li>
                             <li><a href="#two" data-toggle="tab">头像照片</a></li>
                         </ul>
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="${pageContext.request.contextPath}/user" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="action" value="updateInfo">
+                            <input type="hidden" name="uid" value="${user.uid}">
                             <div class="tab-content ">
                                 <div id="one" class="tab-pane active">
                                     <div class="sui-form form-horizontal">
                                         <div class="control-group">
                                             <label for="inputName" class="control-label">昵称：</label>
                                             <div class="controls">
-                                                <input type="text" id="inputName" name="nickname" placeholder="昵称">
+                                                <input type="text" id="inputName" name="nickname" placeholder="昵称" value="${user.nickname}">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label">性别：</label>
                                             <div class="controls">
 
-                                                <input type="radio" name="sex" value="1"><b>男</b>
+                                                <input type="radio" name="sex" value="1" <c:if test="${user.sex == 1}">checked</c:if>><b>男</b>
                                                 &nbsp;&nbsp;
-                                                <input type="radio" name="sex" value="0"><b>女</b>
+                                                <input type="radio" name="sex" value="0" <c:if test="${user.sex == 0}">checked</c:if>><b>女</b>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label">生日：</label>
                                             <div class="controls">
-                                                <input type="text" name="birthday" placeholder="生日">
+                                                <input type="text" name="birthday" placeholder="生日" value="${user.birthday}">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label">邮箱：</label>
                                             <div class="controls">
-                                                <input type="text" name="email" placeholder="邮箱">
+                                                <input type="text" name="email" placeholder="邮箱" value="${user.email}">
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -77,12 +79,10 @@
                                                  alt="">
                                             <input type="file" id="up_img_WU_FILE_0" name="pic"/>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>

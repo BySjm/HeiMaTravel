@@ -60,16 +60,19 @@
 <div class="navitem">
     <ul class="nav" id="categoryUI">
         <li class="nav-active"><a href="index.jsp">首页</a></li>
-        <li><a href="route_list.jsp">周边游</a></li>
-        <li><a href="route_list.jsp">山水游</a></li>
-        <li><a href="route_list.jsp">古镇游</a></li>
-        <li><a href="route_list.jsp">出境游</a></li>
-        <li><a href="route_list.jsp">国内游</a></li>
-        <li><a href="route_list.jsp">港澳游</a></li>
-        <li><a href="route_list.jsp">台湾游</a></li>
-        <li><a href="route_list.jsp">5A景点游</a></li>
-        <li><a href="route_list.jsp">全球自由行</a></li>
+
     </ul>
+    <script>
+        $(function () {
+            let url = '${pageContext.request.contextPath}/category?action=findAll';
+            $.get(url,function (resp) {
+               for (let c of resp){
+                   $('#categoryUI').append(`<li><a href="route_list.jsp">\${c.cname}</a></li>`)
+               }
+            })
+        })
+        
+    </script>
 </div>
 <!-- 登录模态框 -->
 <div class="modal fade" id="loginModel" tabindex="-1" role="dialog" aria-labelledby="loginModelLable">

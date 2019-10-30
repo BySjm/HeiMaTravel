@@ -1,11 +1,15 @@
 package com.itheima.travel.web.servlet;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.itheima.travel.domain.Category;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.List;
 
 public class BaseServlet extends HttpServlet {
 
@@ -25,5 +29,11 @@ public class BaseServlet extends HttpServlet {
             e.printStackTrace();
             throw new RuntimeException("请求参数错误...");
         }
+    }
+    protected static void writeJsonToClient(Object object, HttpServletResponse response) throws ServletException, IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = objectMapper.writeValueAsString(object);
+        response.setContentType("application/json;charset=utf-8");
+        response.getWriter().write(json);
     }
 }

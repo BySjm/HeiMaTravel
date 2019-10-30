@@ -55,10 +55,7 @@ public class UserServlet extends BaseServlet {
     protected void findByUsername(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         ResultInfo resultInfo = service.findByUsername(username);
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(resultInfo);
-        response.setContentType("application/json;charset=utf-8");
-        response.getWriter().write(json);
+        BaseServlet.writeJsonToClient(resultInfo,response);
     }
 
     //判断手机号
@@ -66,15 +63,12 @@ public class UserServlet extends BaseServlet {
         ResultInfo resultInfo = null;
         String telephone = request.getParameter("telephone");
         User user = service.findByTelephone(telephone);
-        ObjectMapper objectMapper = new ObjectMapper();
         if (user != null) {
             resultInfo = new ResultInfo(false, "手机号已被注册");
         } else {
             resultInfo = new ResultInfo(true, "可以注册");
         }
-        String json = objectMapper.writeValueAsString(resultInfo);
-        response.setContentType("application/json;charset=utf-8");
-        response.getWriter().write(json);
+        BaseServlet.writeJsonToClient(resultInfo,response);
     }
 
     //发送短信验证码
@@ -85,12 +79,7 @@ public class UserServlet extends BaseServlet {
         if (resultInfo.getSuccess()) {// 成功
             request.getSession().setAttribute("smsCodeServer", smsCodeServer);
         }
-        // 5.将resultInfo转为json
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(resultInfo);
-        // 6.响应到客户端
-        response.setContentType("application/json;charset=utf-8");
-        response.getWriter().write(json);
+        BaseServlet.writeJsonToClient(resultInfo,response);
     }
 
     //密码登录
@@ -108,10 +97,7 @@ public class UserServlet extends BaseServlet {
             e.printStackTrace();
             resultInfo = new ResultInfo(false, "服务器异常，请稍后再试...");
         }
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(resultInfo);
-        response.setContentType("application/json;charset=utf-8");
-        response.getWriter().write(json);
+        BaseServlet.writeJsonToClient(resultInfo,response);
     }
 
     //手机登录
@@ -132,10 +118,7 @@ public class UserServlet extends BaseServlet {
                 resultInfo = new ResultInfo(false, "验证码和手机号不匹配");
             }
         }
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(resultInfo);
-        response.setContentType("application/json;charset=utf-8");
-        response.getWriter().write(json);
+        BaseServlet.writeJsonToClient(resultInfo,response);
     }
 
     //登出
