@@ -41,7 +41,7 @@
                                     <span>${route.price}</span>
                                     <span>起</span>
                                 </p>
-                                <p><a href="route_detail.jsp">查看详情</a></p>
+                                <p><a href="${pageContext.request.contextPath}/route?action=findDetail&rid=${route.rid}">查看详情</a></p>
                             </div>
                         </li>
                     </c:forEach>

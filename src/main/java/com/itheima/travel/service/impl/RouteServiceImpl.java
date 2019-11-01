@@ -31,4 +31,12 @@ public class RouteServiceImpl implements RouteService {
         pageBean.setPageSize(pageSize);
         return pageBean;
     }
+
+    //线路详情
+    @Override
+    public Route findDetail(String rid) {
+        SqlSession sqlSession = MyBatisUtils.openSession();
+        RouteDao routeDao = sqlSession.getMapper(RouteDao.class);
+        return routeDao.findDetail(rid);
+    }
 }

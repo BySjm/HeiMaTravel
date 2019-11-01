@@ -26,4 +26,41 @@
         </where>
     </select>
 
+    <resultMap id="routeMap" type="Route">
+        <id column="rid" property="rid"></id>
+        <result column="rname" property="rname"></result>
+        <result column="price" property="price"></result>
+        <result column="routeIntroduce" property="routeIntroduce"></result>
+        <result column="rflag" property="rflag"></result>
+        <result column="isThemeTour" property="isThemeTour"></result>
+        <result column="num" property="num"></result>
+        <result column="cid" property="cid"></result>
+        <result column="rimage" property="rimage"></result>
+        <result column="sid" property="sid"></result>
+        <result column="sourceId" property="sourceId"></result>
+        <association property="category" javaType="Category">
+            <id property="cid" column="cid"></id>
+            <result column="cname" property="cname"></result>
+        </association>
+        <association property="seller" javaType="Seller">
+            <id column="sid" property="sid"></id>
+            <result column="sname" property="sname"></result>
+            <result column="address" property="address"></result>
+            <result column="consphone" property="consphone"></result>
+        </association>
+        <collection property="routeImgList" ofType="RouteImg">
+            <id column="rgid" property="rgid"></id>
+            <result column="rid" property="rid"></result>
+            <result column="smallPic" property="smallPic"></result>
+            <result column="bigPic" property="bigPic"></result>
+        </collection>
+    </resultMap>
+    <select id="findDetail" resultType="Route" parameterType="string" resultMap="routeMap">
+        SELECT * FROM `tab_route` tr
+            INNER JOIN `tab_category` tc ON tr.`cid` = tc.`cid`
+            INNER JOIN `tab_seller` ts ON tr.`sid` = ts.`sid`
+            INNER JOIN `tab_route_img` tri ON tr.`rid` = tri.`rid`
+            WHERE tr.`rid` = #{rid}
+    </select>
+
 </mapper>

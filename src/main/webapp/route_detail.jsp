@@ -15,57 +15,35 @@
     <div class="bread_box">
         <a href="index.jsp">首页</a>
         <span> &gt;</span>
-        <a href="#">国内游</a><span> &gt;</span>
-        <a href="#">全国-曼谷6-7天自由行 泰国出境旅游 特价往返机票自由行二次确认</a>
+        <a href="#">${route.category.cname}</a><span> &gt;</span>
+        <a href="#">${route.routeIntroduce}</a>
     </div>
     <div class="prosum_box">
         <dl class="prosum_left">
             <dt>
-                <img alt="" class="big_img" src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m49788843d72171643297ccc033d9288ee.jpg">
+                <img alt="" class="big_img" src="${route.rimage}">
             </dt>
             <dd>
                 <a class="up_img up_img_disable"></a>
-                <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m40920d0669855e745d97f9ad1df966ebb.jpg">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m20920d0669855e745d97f9ad1df966ebb.jpg">
+                <c:forEach items="${route.routeImgList}" var="imgList">
+                <a title="" class="little_img" data-bigpic="${imgList.bigPic}">
+                    <img src="${imgList.smallPic}">
                 </a>
-                <a title="" class="little_img cur_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m49788843d72171643297ccc033d9288ee.jpg">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m29788843d72171643297ccc033d9288ee.jpg">
-                </a>
-                <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m4531a8dbceefa2c44e6d0e35627cd2689.jpg">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m2531a8dbceefa2c44e6d0e35627cd2689.jpg">
-                </a>
-                <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m46d8cb900e9f6c0a762aca19eae40c00c.jpg">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m26d8cb900e9f6c0a762aca19eae40c00c.jpg">
-                </a>
-                <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m45ea00f6eba562a767b5095bbf8cffe07.jpg" style="display:none;">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m25ea00f6eba562a767b5095bbf8cffe07.jpg">
-                </a>
-                <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m4265ec488cd1bc7ce749bc8c9b34b87bc.jpg" style="display:none;">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m2265ec488cd1bc7ce749bc8c9b34b87bc.jpg">
-                </a>
-                <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m4e7e964909d7dd1a9f6e5494d4dc0c847.jpg" style="display:none;">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m2e7e964909d7dd1a9f6e5494d4dc0c847.jpg">
-                </a>
-                <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m467db00e1b76718fab0fe8b96e10f4d35.jpg" style="display:none;">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m267db00e1b76718fab0fe8b96e10f4d35.jpg">
-                </a>
-                <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m487bbbc6e43eba6aa6a36cc1a182f7a20.jpg" style="display:none;">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m287bbbc6e43eba6aa6a36cc1a182f7a20.jpg">
-                </a>
+                </c:forEach>
                 <a class="down_img down_img_disable" style="margin-bottom: 0;"></a>
             </dd>
         </dl>
         <div class="prosum_right">
-            <p class="pros_title">【尾单特卖】全国-曼谷6-7天自由行 泰国出境旅游 特价往返机票自由行二次确认</p>
-            <p class="hot">1-2月出发，网付立享￥1099/2人起！爆款位置有限，抢完即止！</p>
+            <p class="pros_title">${route.rname}</p>
+            <p class="hot">${route.routeIntroduce}</p>
             <div class="pros_other">
-                <p>经营商家  ：黑马国旅</p>
-                <p>咨询电话 : 400-618-9090</p>
-                <p>地址 ： 传智播客黑马程序员</p>
+                <p>经营商家  ：${route.seller.sname}</p>
+                <p>咨询电话 :${route.seller.consphone}</p>
+                <p>地址 ：${route.seller.address}</p>
             </div>
             <div class="pros_price">
                 <p class="price">
-                    <strong>￥2699.00</strong>
+                    <strong>￥${route.price}</strong>
                 </p>
                 <div class="p_number">
                     <div class="f_l add_chose">

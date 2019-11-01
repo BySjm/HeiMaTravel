@@ -18,7 +18,7 @@ public class RouteServlet extends BaseServlet{
 
     RouteService routeService = (RouteService)BeanFactory.getBean("RouteService");
 
-    //模板
+    //分页
     protected void findByPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pageNumStr = request.getParameter("pageNum");
         String pageSizeStr = request.getParameter("pageSize");
@@ -37,6 +37,14 @@ public class RouteServlet extends BaseServlet{
         request.setAttribute("cid",cid);
         request.setAttribute("rname",rname);
         request.getRequestDispatcher("/route_list.jsp").forward(request,response);
+    }
+
+    //查看详情
+    protected void findDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String rid = request.getParameter("rid");
+        Route route = routeService.findDetail(rid);
+        request.setAttribute("route",route);
+        request.getRequestDispatcher("/route_detail.jsp").forward(request,response);
     }
 
     //模板
