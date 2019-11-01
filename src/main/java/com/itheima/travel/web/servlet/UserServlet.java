@@ -6,9 +6,11 @@ import com.itheima.travel.domain.User;
 import com.itheima.travel.factory.BeanFactory;
 import com.itheima.travel.service.UserService;
 import com.itheima.travel.service.impl.UserServiceImpl;
+import com.itheima.travel.util.JedisUtils;
 import com.itheima.travel.util.UuidUtils;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import redis.clients.jedis.Jedis;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -23,11 +25,16 @@ import java.util.Map;
 @MultipartConfig
 public class UserServlet extends BaseServlet {
 
-    UserService service = (UserService)BeanFactory.getBean("UserService");
+    UserService service = (UserService) BeanFactory.getBean("UserService");
 
+    //注册
     protected void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String smsCode = request.getParameter("smsCode");
-        String smsCodeServer = (String) request.getSession().getAttribute("smsCodeServer");
+        String telephone = request.getParameter("telephone");
+        //String smsCodeServer = (String) request.getSession().getAttribute("smsCodeServer");
+        //从jedis获取存入的验证码
+        Jedis jedis = JedisUtils.getJedis();
+        String smsCodeServer = jedis.get("smsCodeServer" + telephone);
         if (smsCodeServer == null || !smsCodeServer.equals(smsCode)) {
             request.setAttribute("resultInfo", new ResultInfo(false, "验证码不正确"));
             request.getRequestDispatcher("/register.jsp").forward(request, response);
@@ -43,9 +50,13 @@ public class UserServlet extends BaseServlet {
                 request.getRequestDispatcher("/register.jsp").forward(request, response);
             } else {
                 //清除session中存入的验证码信息
-                request.getSession().removeAttribute("smsCodeServer");
+                //request.getSession().removeAttribute("smsCodeServer");
+                //删除jedis存入的验证码
+                jedis.del("smsCodeServer" + telephone);
                 response.sendRedirect(request.getContextPath() + "/register_ok.jsp");
             }
+            //归还到连接池
+            jedis.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,7 +66,7 @@ public class UserServlet extends BaseServlet {
     protected void findByUsername(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         ResultInfo resultInfo = service.findByUsername(username);
-        BaseServlet.writeJsonToClient(resultInfo,response);
+        BaseServlet.writeJsonToClient(resultInfo, response);
     }
 
     //判断手机号
@@ -68,7 +79,7 @@ public class UserServlet extends BaseServlet {
         } else {
             resultInfo = new ResultInfo(true, "可以注册");
         }
-        BaseServlet.writeJsonToClient(resultInfo,response);
+        BaseServlet.writeJsonToClient(resultInfo, response);
     }
 
     //发送短信验证码
@@ -77,9 +88,13 @@ public class UserServlet extends BaseServlet {
         String smsCodeServer = RandomStringUtils.randomNumeric(6);
         ResultInfo resultInfo = service.sendSms(telephone, smsCodeServer);
         if (resultInfo.getSuccess()) {// 成功
-            request.getSession().setAttribute("smsCodeServer", smsCodeServer);
+            //request.getSession().setAttribute("smsCodeServer", smsCodeServer);
+            //把验证码存进redis
+            Jedis jedis = JedisUtils.getJedis();
+            jedis.setex("smsCodeServer" + telephone, 300, smsCodeServer);
+            jedis.close();
         }
-        BaseServlet.writeJsonToClient(resultInfo,response);
+        BaseServlet.writeJsonToClient(resultInfo, response);
     }
 
     //密码登录
@@ -97,28 +112,35 @@ public class UserServlet extends BaseServlet {
             e.printStackTrace();
             resultInfo = new ResultInfo(false, "服务器异常，请稍后再试...");
         }
-        BaseServlet.writeJsonToClient(resultInfo,response);
+        BaseServlet.writeJsonToClient(resultInfo, response);
     }
 
-    //手机登录
+    //手机短信登录
     protected void telLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ResultInfo resultInfo = null;
         String telephone = request.getParameter("telephone");
         String smsCode = request.getParameter("smsCode");
-        String smsCodeServer = (String) request.getSession().getAttribute("smsCodeServer");
+        //String smsCodeServer = (String) request.getSession().getAttribute("smsCodeServer");
+        //从jedis获取存入的验证码
+        Jedis jedis = JedisUtils.getJedis();
+        String smsCodeServer = jedis.get("smsCodeServer" + telephone);
         if (smsCodeServer == null || !smsCode.equals(smsCodeServer)) {
             resultInfo = new ResultInfo(false, "验证码不匹配");
         } else {
             User user = service.findByTelephone(telephone);
             if (user != null) {
                 resultInfo = new ResultInfo(true, "登录成功");
-                request.getSession().removeAttribute("smsCodeServer");
+                //request.getSession().removeAttribute("smsCodeServer");
+                //删除jedis存入的验证码
+                jedis.del("smsCodeServer" + telephone);
                 request.getSession().setAttribute("user", user);
             } else {
                 resultInfo = new ResultInfo(false, "验证码和手机号不匹配");
             }
         }
-        BaseServlet.writeJsonToClient(resultInfo,response);
+        //归还到连接池
+        jedis.close();
+        BaseServlet.writeJsonToClient(resultInfo, response);
     }
 
     //登出

@@ -27,44 +27,51 @@
                     <span class="jg">价格</span>
                 </div>
                 <ul>
-                    <li>
-                        <div class="img"><img src="images/04-search_03.jpg" width="300px" alt=""></div>
-                        <div class="text1">
-                            <p>【减100元 含除夕/春节出发】广州增城三英温泉度假酒店/自由行套票</p>
-                            <br/>
-                            <p>1-2月出发，网付立享￥1099/2人起！爆款位置有限，抢完即止！</p>
-                        </div>
-                        <div class="price">
-                            <p class="price_num">
-                                <span>&yen;</span>
-                                <span>299</span>
-                                <span>起</span>
-                            </p>
-                            <p><a href="route_detail.jsp">查看详情</a></p>
-                        </div>
-                    </li>
-                   
+                    <c:forEach items="${pageBean.list}" var="route">
+                        <li>
+                            <div class="img"><img src="${route.rimage}" width="300px" alt=""></div>
+                            <div class="text1">
+                                <p>${route.rname}</p>
+                                <br/>
+                                <p>${route.routeIntroduce}</p>
+                            </div>
+                            <div class="price">
+                                <p class="price_num">
+                                    <span>&yen;</span>
+                                    <span>${route.price}</span>
+                                    <span>起</span>
+                                </p>
+                                <p><a href="route_detail.jsp">查看详情</a></p>
+                            </div>
+                        </li>
+                    </c:forEach>
                 </ul>
                 <div class="page_num_inf">
                     <i></i> 共
-                    <span>12</span>页<span>132</span>条
+                    <span>${pageBean.totalPage}</span>页<span>${pageBean.totalCount}</span>条
                 </div>
                 <div class="pageNum">
                     <ul>
-                        <li><a href="">首页</a></li>
-                        <li class="threeword"><a href="#">上一页</a></li>
-                        <li class="curPage"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">8</a></li>
-                        <li><a href="#">9</a></li>
-                        <li><a href="#">10</a></li>
-                        <li class="threeword"><a href="javascript:;">下一页</a></li>
-                        <li class="threeword"><a href="javascript:;">末页</a></li>
+                        <c:if test="${pageBean.pageNum > 1}">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/route?action=findByPage&cid=${cid}&pageNum=1&pageSize=10&rname=${rname}">首页</a>
+                            </li>
+                            <li class="threeword"><a
+                                    href="${pageContext.request.contextPath}/route?action=findByPage&cid=${cid}&pageNum=${pageBean.pageNum - 1}&pageSize=10&rname=${rname}">上一页</a>
+                            </li>
+                        </c:if>
+                        <c:forEach begin="${pageBean.begin}" end="${pageBean.end}" var="page">
+                            <c:if test="${pageBean.pageNum == page}">
+                                <li class="curPage"><a href="${pageContext.request.contextPath}/route?action=findByPage&cid=${cid}&pageNum=${page}&pageSize=10&rname=${rname}">${page}</a></li>
+                            </c:if>
+                            <c:if test="${pageBean.pageNum != page}">
+                                <li><a href="${pageContext.request.contextPath}/route?action=findByPage&cid=${cid}&pageNum=${page}&pageSize=10&rname=${rname}">${page}</a></li>
+                            </c:if>
+                        </c:forEach>
+                        <c:if test="${pageBean.pageNum < pageBean.totalPage}">
+                            <li class="threeword"><a href="${pageContext.request.contextPath}/route?action=findByPage&cid=${cid}&pageNum=${pageBean.pageNum+1}&pageSize=10&rname=${rname}">下一页</a></li>
+                            <li class="threeword"><a href="${pageContext.request.contextPath}/route?action=findByPage&cid=${cid}&pageNum=${pageBean.totalPage}&pageSize=10&rname=${rname}">末页</a></li>
+                        </c:if>
                     </ul>
                 </div>
             </div>

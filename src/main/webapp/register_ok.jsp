@@ -13,7 +13,17 @@
 <!-- 头部 end -->
 <div style="text-align:center;height: 290px;margin-top: 50px">
     <span style="font-size: 30px">恭喜您，注册成功！</span>
-    <div><span style="color: red">5</span>秒后，跳转到 <a href="./index.jsp">首页</a> </div>
+    <div><span id="numInfo" style="color: red">5</span>秒后，跳转到 <a href="./index.jsp">首页</a></div>
+    <script>
+        let num = 5;
+        setInterval(function () {
+            num--;
+            $('#numInfo').text(num);
+            if (num == 0) {
+                location.href = '${pageContext.request.contextPath}';
+            }
+        },1000)
+    </script>
 </div>
 <!--引入尾部-->
 <jsp:include page="footer.jsp"></jsp:include>

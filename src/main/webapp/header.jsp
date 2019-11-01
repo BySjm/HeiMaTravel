@@ -42,6 +42,12 @@
                 <input id="rname" name="rname" type="text" placeholder="请输入路线名称" class="search_input" value="${rname}"
                        autocomplete="off">
                 <a href="javascript:void(0);" onclick="searchClick()" class="search-button">搜索</a>
+                <script>
+                    function searchClick() {
+                        let rname = $('#rname').val();
+                        location.href = "${pageContext.request.contextPath}/route?action=findByPage&rname=" + rname;
+                    }
+                </script>
             </div>
             <div class="hottel">
                 <div class="hot_pic">
@@ -65,13 +71,12 @@
     <script>
         $(function () {
             let url = '${pageContext.request.contextPath}/category?action=findAll';
-            $.get(url,function (resp) {
-               for (let c of resp){
-                   $('#categoryUI').append(`<li><a href="route_list.jsp">\${c.cname}</a></li>`)
-               }
+            $.get(url, function (resp) {
+                for (let c of resp) {
+                    $('#categoryUI').append(`<li><a href="${pageContext.request.contextPath}/route?action=findByPage&cid=\${c.cid}">\${c.cname}</a></li>`)
+                }
             })
         })
-        
     </script>
 </div>
 <!-- 登录模态框 -->
@@ -148,7 +153,7 @@
                                 <input type="text" class="form-control" id="login_check" name="smsCode"
                                        placeholder="请输入手机验证码">
                             </div>
-<%--                            <a href="javaScript:" id="login_sendSmsCode">发送手机验证码</a>--%>
+                            <%--                            <a href="javaScript:" id="login_sendSmsCode">发送手机验证码</a>--%>
                             <input class="btn btn-link" type="text" id="login_sendSmsCode" value="发送手机验证码">
                         </div>
                         <div class="modal-footer">
@@ -162,40 +167,42 @@
                         $('#login_sendSmsCode').click(function () {
                             let telephone = $('#login_telephone').val();
                             let url = '${pageContext.request.contextPath}/user';
-                            let data = 'action=sendSms&telephone='+telephone;
-                            $.post(url,data,function (resp) {
-                                if (resp.success){
+                            let data = 'action=sendSms&telephone=' + telephone;
+                            $.post(url, data, function (resp) {
+                                if (resp.success) {
                                     alert("短信发送成功")
-                                }else {
+                                } else {
                                     alert("服务器繁忙...")
                                 }
                             });
                             countDown(this);
                         });
                         //60秒倒计时
-                        let num = 60;
+                        let nums = 60;
+
                         function countDown(obj) {
-                            if (num == 0){
-                                $(obj).prop('disabled',false);
+                            if (nums == 0) {
+                                $(obj).prop('disabled', false);
                                 $(obj).val('重新发送短信');
-                                num = 60;
-                            }else {
-                                num--;
-                                $(obj).prop('disabled',true);
+                                nums = 60;
+                            } else {
+                                nums--;
+                                $(obj).prop('disabled', true);
                                 $(obj).val(`\${num}秒后重新发送`)
                                 setTimeout(function () {
                                     countDown(obj);
-                                },1000)
+                                }, 1000)
                             }
                         }
+
                         //短信登录
                         $('#telLogin').click(function () {
                             let data = $('#telLoginForm').serialize();
                             let url = '${pageContext.request.contextPath}/user';
-                            $.post(url,data,function (resp) {
-                                if (resp.success){
+                            $.post(url, data, function (resp) {
+                                if (resp.success) {
                                     location.reload();
-                                }else {
+                                } else {
                                     $('#telLoginInfo').text(resp.message);
                                 }
                             })
