@@ -13,6 +13,9 @@ import java.util.List;
 
 public class BaseServlet extends HttpServlet {
 
+    //两个功能跳转->重定向
+    //
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 接收请求参数 action

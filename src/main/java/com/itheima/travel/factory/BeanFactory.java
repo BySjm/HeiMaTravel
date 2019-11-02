@@ -30,6 +30,7 @@ public class BeanFactory {
             Class clazz = Class.forName(className);
             // 8.创建该对象的实例
             object = clazz.newInstance();
+            object = JdkProxyFactory.createLogProxy(object);
         } catch (Exception e) {
             e.printStackTrace();
         }
