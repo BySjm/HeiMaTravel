@@ -10,6 +10,7 @@ import org.dom4j.io.SAXReader;
 import java.io.InputStream;
 
 public class BeanFactory {
+
     public static Object getBean(String id) {
         Object object = null;
         try {

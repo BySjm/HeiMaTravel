@@ -9,4 +9,8 @@
         insert into `tab_address` (uid,contact,address,telephone) values(#{user.uid},#{contact},#{address},#{telephone})
     </insert>
 
+    <select id="findByAid" parameterType="int" resultType="Address">
+        select * from `tab_address` where aid = #{aid}
+    </select>
+
 </mapper>

@@ -1,12 +1,5 @@
 package com.itheima.travel.factory;
 
-import com.itheima.travel.domain.User;
-import com.itheima.travel.service.AddressService;
-import com.itheima.travel.service.UserService;
-import com.itheima.travel.service.impl.AddressServiceImpl;
-import com.itheima.travel.service.impl.UserServiceImpl;
-import org.junit.Test;
-
 import java.io.*;
 import java.lang.reflect.Proxy;
 import java.time.LocalDateTime;

@@ -27,7 +27,7 @@
             <div class="login">
                 <span>欢迎回来，${user.username}</span>
                 <a href="${pageContext.request.contextPath}/user?action=userInfo" class="collection">个人中心</a>
-                <a href="cart.jsp" class="collection">购物车</a>
+                <a href="${pageContext.request.contextPath}/cart?action=findAll" class="collection">购物车</a>
                 <a href="${pageContext.request.contextPath}/user?action=logout">退出</a>
             </div>
         </c:if>

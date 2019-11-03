@@ -7,7 +7,10 @@ import java.util.List;
 
 public interface AddressService {
 
-    List<Address> findByUid(User user);
+    List<Address> findByUid(Integer uid);
 
     void save(Address address);
+
+    Address findByAid(Integer aid);
+
 }

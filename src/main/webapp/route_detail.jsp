@@ -52,8 +52,18 @@
                         <a class="add" onClick="setAmount.add('#qty_item_1')" href="javascript:void(0)">+</a>
                     </div>
                     <span class="collect">
-                         <a class="btn" href="cart_success.jsp" id="addCart"><i class="glyphicon glyphicon-heart-empty"></i>加入购物车</a>
+                         <a class="btn" href="javascript:" id="addCart"><i class="glyphicon glyphicon-heart-empty"></i>加入购物车</a>
                     </span>
+                    <script>
+                        $('#addCart').click(function () {
+                            if(${empty user}){
+                                $('#loginBtn').click();
+                            }else {
+                                let num = $('#qty_item_1').val();
+                                location.href = '${pageContext.request.contextPath}/cart?action=addCart&rid=${route.rid}&num='+num;
+                            }
+                        })
+                    </script>
                 </div>
 
             </div>

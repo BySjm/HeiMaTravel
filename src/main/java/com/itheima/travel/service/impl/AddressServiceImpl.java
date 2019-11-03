@@ -11,10 +11,10 @@ import java.util.List;
 
 public class AddressServiceImpl implements AddressService {
     @Override
-    public List<Address> findByUid(User user) {
+    public List<Address> findByUid(Integer uid) {
         SqlSession sqlSession = MyBatisUtils.openSession();
         AddressDao dao = sqlSession.getMapper(AddressDao.class);
-        List<Address> list =  dao.findByUid(user);
+        List<Address> list =  dao.findByUid(uid);
         MyBatisUtils.close(sqlSession);
         return list;
     }
@@ -25,5 +25,12 @@ public class AddressServiceImpl implements AddressService {
         AddressDao dao = sqlSession.getMapper(AddressDao.class);
         dao.save(address);
         MyBatisUtils.close(sqlSession);
+    }
+
+    @Override
+    public Address findByAid(Integer aid) {
+        SqlSession sqlSession = MyBatisUtils.openSession();
+        AddressDao dao = sqlSession.getMapper(AddressDao.class);
+        return dao.findByAid(aid);
     }
 }

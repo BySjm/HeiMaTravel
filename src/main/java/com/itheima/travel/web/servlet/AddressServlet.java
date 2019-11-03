@@ -28,7 +28,7 @@ public class AddressServlet extends BaseServlet {
             response.sendRedirect(request.getContextPath());
             return;
         }
-        List<Address> list = service.findByUid(user);
+        List<Address> list = service.findByUid(user.getUid());
         request.setAttribute("list", list);
         request.getRequestDispatcher("home_address.jsp").forward(request, response);
     }
