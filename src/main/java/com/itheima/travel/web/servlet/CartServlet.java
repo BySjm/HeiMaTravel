@@ -77,7 +77,7 @@ public class CartServlet extends BaseServlet {
         jedis.del("travel_cart_" + user.getUsername());
         jedis.close();
         //重定向
-        response.sendRedirect(request.getContextPath()+"/pay.jsp");
+        response.sendRedirect(request.getContextPath()+"/pay?action=getPayUrl&oid="+order.getOid());
     }
 
     //准备订单页面

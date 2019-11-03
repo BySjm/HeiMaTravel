@@ -5,4 +5,13 @@
         INSERT INTO `tab_order` (`oid`,`ordertime`,`total`,`state`,`address`,`contact`,`telephone`,`uid`)
             VALUES(#{oid},#{ordertime},#{total},#{state},#{address},#{contact},#{telephone},#{user.uid})
     </insert>
+
+    <update id="updateState" parameterType="string">
+        update `tab_order` set `state` = 1 where oid = #{oid}
+    </update>
+
+    <select id="findByOid" parameterType="string" resultType="Order">
+        select * from `tab_order` where oid = #{oid}
+    </select>
+
 </mapper>

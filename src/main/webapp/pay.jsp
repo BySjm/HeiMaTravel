@@ -17,22 +17,51 @@
         <!--主内容-->
         <div class="checkout py-container  pay">
             <div class="checkout-tit">
-                <h4 class="fl tit-txt"><span class="success-icon"></span><span  class="success-info">订单提交成功，请您及时付款！订单号：56789065645</span></h4>
-                <span class="fr"><em class="sui-lead">应付金额：</em><em  class="orange money">￥17,654</em>元</span>
+                <h4 class="fl tit-txt"><span class="success-icon"></span><span
+                        class="success-info">订单提交成功，请您及时付款！订单号：${oid}</span></h4>
+                <span class="fr"><em class="sui-lead">应付金额：</em><em class="orange money">￥17,654</em>元</span>
                 <div class="clearfix"></div>
             </div>
             <div class="checkout-steps">
                 <div class="fl weixin">微信支付</div>
                 <div class="fl sao">
-                    <p class="red" style="padding-bottom: 40px">二维码已过期，刷新页面重新获取二维码。</p>
+                    <%--                    <p class="red" style="padding-bottom: 40px">二维码已过期，刷新页面重新获取二维码。</p>--%>
                     <div class="fl code">
-                        <img src="img/erweima.png" alt="">
+                        ${payUrl}
+                        <img id="qrious">
                         <div class="saosao">
                             <p>请使用微信扫一扫</p>
                             <p>扫描二维码支付</p>
                         </div>
                     </div>
-                    <div class="fl" style="background:url(./img/phone-bg.png) no-repeat;width:350px;height:400px;margin-left:40px">
+                    <script src="js/qrious.js"></script>
+                    <script>
+                        let qr = new QRious({
+                            element: document.getElementById('qrious'),
+                            size: 250,
+                            level: 'L',
+                            value: '${payUrl}'
+                        })
+                    </script>
+                    <script>
+                        // 支付状态查询
+                        let num = setInterval(function () {
+                            let url = '${pageContext.request.contextPath}/pay';
+                            let data = 'action=isPay&oid=${oid}';
+                            $.post(url, data, function (resp) {
+                                if (resp.success) {
+                                    location.href = '${pageContext.request.contextPath}/pay_success.jsp';
+                                }
+                            })
+                        }, 5000);
+                        //支付时间10分钟
+                        setTimeout(function () {
+                            clearInterval(num);
+                            location.href = '${pageContext.request.contextPath}/pay_fail.jsp';
+                        }, 600000)
+                    </script>
+                    <div class="fl"
+                         style="background:url(./img/phone-bg.png) no-repeat;width:350px;height:400px;margin-left:40px">
 
                     </div>
 
@@ -45,5 +74,6 @@
 </div>
 <!--引入尾部-->
 <jsp:include page="footer.jsp"></jsp:include>
+
 </body>
 </html>
